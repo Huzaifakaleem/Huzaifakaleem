@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
-}
+/* App.css — component-level scoped styles */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ─── Loading Screen ─── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loading-terminal {
+  font-family: var(--font-mono);
+  color: var(--accent-green);
+  font-size: 0.9rem;
+  max-width: 500px;
+  width: 90%;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+.loading-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  opacity: 0;
+  animation: fadeInLine 0.3s ease forwards;
+}
+.loading-line:nth-child(1) { animation-delay: 0.1s; }
+.loading-line:nth-child(2) { animation-delay: 0.4s; }
+.loading-line:nth-child(3) { animation-delay: 0.7s; }
+.loading-line:nth-child(4) { animation-delay: 1.0s; }
+.loading-line:nth-child(5) { animation-delay: 1.3s; }
+.loading-line .prompt { color: var(--accent-cyan); }
+.loading-line .ok { color: var(--accent-green); font-weight: 600; }
+.loading-line .err { color: #ff6b6b; }
+@keyframes fadeInLine {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.loading-bar-wrap {
+  margin-top: 1.2rem;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+  border-radius: 2px;
+  animation: loadBar 2s ease forwards;
+}
+@keyframes loadBar {
+  from { width: 0%; }
+  to   { width: 100%; }
 }
 
-.App-link {
-  color: #61dafb;
+/* ─── Back to Top ─── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #141b2d;
+  color: #00d4ff;
+  border: 1px solid #00d4ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: var(--glow);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition), transform var(--transition);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  box-shadow: var(--glow-strong);
+  transform: translateY(-4px);
 }

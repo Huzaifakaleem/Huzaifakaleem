@@ -1,0 +1,188 @@
+/* Navbar.css */
+
+.navbar-cyber {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 1rem;
+  transition: all 0.4s ease;
+}
+
+.navbar-cyber.scrolled {
+  padding: 0.7rem 1rem;
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.navbar-logo {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  letter-spacing: 0.05em;
+}
+.logo-bracket { color: var(--accent-cyan); }
+.logo-initials { color: var(--text-primary); padding: 0 2px; }
+.logo-cursor {
+  color: var(--accent-green);
+  opacity: 0;
+  transition: opacity 0.1s;
+  font-weight: 300;
+}
+.logo-cursor.visible { opacity: 1; }
+
+/* Desktop nav links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link-cyber {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all var(--transition);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.nav-link-cyber .nav-num {
+  color: var(--accent-cyan);
+  font-size: 0.7rem;
+  margin-right: 2px;
+}
+.nav-link-cyber:hover,
+.nav-link-cyber.active {
+  color: var(--accent-cyan);
+  background: rgba(0, 212, 255, 0.08);
+}
+.nav-link-cyber::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--accent-cyan);
+  border-radius: 1px;
+  transition: width var(--transition);
+}
+.nav-link-cyber.active::after,
+.nav-link-cyber:hover::after { width: 60%; }
+
+/* Hamburger */
+.hamburger {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: border-color var(--transition);
+}
+.hamburger:hover { border-color: var(--accent-cyan); }
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 1px;
+  transition: all 0.35s ease;
+  transform-origin: center;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Drawer Overlay */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(85vw, 320px);
+  height: 100dvh;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border);
+  z-index: 999;
+  padding: 2rem 1.5rem;
+  transform: translateX(105%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.mobile-drawer.open { transform: translateX(0); }
+
+.drawer-header {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.mobile-drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+.mobile-drawer ul li {
+  opacity: 0;
+  animation: slideInRight 0.3s ease forwards;
+}
+.mobile-drawer.open ul li { animation: slideInRight 0.4s ease forwards; }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.mobile-drawer ul li a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--transition), padding-left var(--transition);
+  text-decoration: none;
+}
+.mobile-drawer ul li a:hover,
+.mobile-drawer ul li a.active {
+  color: var(--accent-cyan);
+  padding-left: 0.5rem;
+}
+.mobile-drawer .nav-num { color: var(--accent-cyan); margin-right: 6px; font-size: 0.75rem; }

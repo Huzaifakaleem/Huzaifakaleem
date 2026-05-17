@@ -1,0 +1,137 @@
+#projects {
+  padding: 100px 0;
+  background: #0a0e1a;
+  color: #e8eaf6;
+}
+
+.section-tag {
+  color: #00d4ff;
+  font-family: monospace;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-line {
+  width: 60px;
+  height: 3px;
+  background: #00d4ff;
+  margin-bottom: 40px;
+}
+
+.filter-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: #141b2d;
+  color: #8892b0;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  color: #00d4ff;
+  border-color: #00d4ff;
+}
+
+.project-card {
+  background: #141b2d;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  transition: 0.4s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.project-card-img {
+  height: 180px;
+  background: #1a2340;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-img-icon {
+  font-size: 3rem;
+}
+
+.project-body {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.project-desc {
+  color: #8892b0;
+  font-size: 14px;
+}
+
+.tech-badge {
+  display: inline-block;
+  color: #00d4ff;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  padding: 3px 8px;
+  margin: 3px;
+  font-size: 11px;
+  border-radius: 3px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.project-link-btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  color: #8892b0;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 4px;
+}
+
+.project-link-btn.demo,
+.project-link-btn:hover {
+  color: #00d4ff;
+  border-color: #00d4ff;
+}
+
+.featured-ribbon {
+  position: absolute;
+  top: 16px;
+  right: -28px;
+  background: #ff2d78;
+  color: white;
+  font-size: 10px;
+  padding: 4px 36px;
+  transform: rotate(45deg);
+}
