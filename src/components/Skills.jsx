@@ -3,23 +3,58 @@ import "./Skills.css";
 
 const Skills = () => {
   const frontendSkills = [
-    { icon: "⚛️", name: "React" },
-    { icon: "🔷", name: "TypeScript" },
-    { icon: "▲", name: "Next.js" },
-    { icon: "🎨", name: "Figma" },
-    { icon: "🅱️", name: "Bootstrap" },
-    { icon: "💠", name: "Redux" },
+    {
+      icon: <i className="fa-brands fa-react" style={{ color: "#00d8ff" }}></i>,
+      name: "React",
+    },
+    {
+      icon: <i className="fa-brands fa-html5" style={{ color: "#3178c6" }}></i>,
+      name: "Html",
+    },
+    {
+      icon: <i className="fa-brands fa-css3-alt" style={{ color: "#00cef7" }}></i>,
+      name: "CSS",
+    },
+    {
+      icon: <i className="fa-brands fa-js" style={{ color: "#00cef7" }}></i>,
+      name: "JavaScript",
+    },
+    {
+      icon: <i className="fa-brands fa-bootstrap" style={{ color: "#00cef7" }}></i>,
+      name: "Bootstrap",
+    },
+    {
+      icon: <i className="fa-solid fa-layer-group" style={{ color: "#00cef7" }}></i>,
+      name: "Redux",
+    },
   ];
 
   const backendSkills = [
-    { icon: "🟢", name: "Node.js" },
-    { icon: "🚀", name: "Express" },
-    { icon: "🍃", name: "MongoDB" },
-    { icon: "🐳", name: "Docker" },
-    { icon: "☁️", name: "AWS" },
-    { icon: "🟠", name: "Git" },
+    {
+      icon: <i className="fa-brands fa-node-js" style={{ color: "#00cef7" }}></i>,
+      name: "Node.js",
+    },
+    {
+      icon: <i className="fa-solid fa-server" style={{ color: "#00cef7" }}></i>,
+      name: "Express",
+    },
+    {
+      icon: <i className="fa-solid fa-database" style={{ color: "#00cef7" }}></i>,
+      name: "MongoDB",
+    },
+    {
+      icon: <i className="fa-brands fa-docker" style={{ color: "#00cef7" }}></i>,
+      name: "Docker",
+    },
+    {
+      icon: <i className="fa-brands fa-aws" style={{ color: "#00cef7" }}></i>,
+      name: "AWS",
+    },
+    {
+      icon: <i className="fa-brands fa-github" style={{ color: "#00cef7" }}></i>,
+      name: "Github",
+    },
   ];
-
   useEffect(() => {
     const cards = document.querySelectorAll(".skill-icon-card");
 

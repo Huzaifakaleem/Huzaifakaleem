@@ -18,6 +18,13 @@
   pointer-events: none;
 }
 
+.custom-accent{
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+  background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
 /* Photo */
 .about-photo-wrap {
   display: flex;

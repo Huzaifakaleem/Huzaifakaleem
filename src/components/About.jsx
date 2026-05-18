@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import './About.css';
 
 const skills = [
-  { name: 'MongoDB', level: 92, color: 'green' },
+  { name: 'MongoDB', level: 92, color: 'cyan' },
   { name: 'Express.js', level: 88, color: 'cyan' },
   { name: 'React', level: 95, color: 'cyan' },
-  { name: 'Node.js', level: 90, color: 'green' },
-  { name: 'REST APIs', level: 93, color: 'green' },
-  { name: 'Git', level: 90, color: 'green' },
+  { name: 'Node.js', level: 90, color: 'cyan' },
+  { name: 'REST APIs', level: 93, color: 'cyan' },
+  { name: 'Git', level: 90, color: 'cyan' },
 ];
 
 const experience = [
@@ -48,35 +48,6 @@ const education = [
   },
 ];
 
-function CountUp({ target, duration = 2000, suffix = '' }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const start = Date.now();
-          const tick = () => {
-            const elapsed = Date.now() - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * target));
-            if (progress < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [target, duration]);
-
-  return <span ref={ref} className="stat-number">{count}{suffix}</span>;
-}
 
 export default function About() {
   const [activeTab, setActiveTab] = useState('skills');
@@ -98,7 +69,7 @@ export default function About() {
         <div className="section-intro animate-on-scroll">
           <span className="section-tag">{'// about_me'}</span>
           <h2 className="section-title">Crafting code with
-            <span className="accent"> purpose & precision</span></h2>
+            <span className="custom-accent"> purpose & precision</span></h2>
           <div className="section-divider"></div>
         </div>
 

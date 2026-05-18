@@ -114,8 +114,9 @@
     var(--accent-green)
   );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 .hero-desc {
@@ -205,8 +206,9 @@
     var(--accent-green)
   );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 .stat-box p {

@@ -60,7 +60,7 @@ export default function Testimonials() {
       <div className="container">
         <div className="section-intro animate-on-scroll">
           <span className="section-tag">{'// testimonials'}</span>
-          <h2 className="section-title">What Clients <span className="accent">Say</span></h2>
+          <h2 className="section-title">What My  <span className="custom-accent">Clients Say</span></h2>
           <div className="section-divider"></div>
         </div>
       </div>

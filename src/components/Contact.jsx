@@ -30,7 +30,7 @@ function ContactInfo() {
       <div className="contact-items">
         {[
           { icon: 'bi-geo-alt-fill', label: 'Location', value: 'Lahore, Pakistan (Remote OK)', color: 'cyan' },
-          { icon: 'bi-clock-fill', label: 'Response Time', value: 'Within 24 hours', color: 'green' },
+          { icon: 'bi-clock-fill', label: 'Response Time', value: 'Within 24 hours', color: 'cyan' },
           { icon: 'bi-briefcase-fill', label: 'Availability', value: 'Open to Opportunities', color: 'cyan' },
         ].map(({ icon, label, value, color }) => (
           <div key={label} className="contact-item">
@@ -208,7 +208,7 @@ export default function Contact() {
       <div className="container">
         <div className="section-intro animate-on-scroll">
           <span className="section-tag">{'// get_in_touch'}</span>
-          <h2 className="section-title">Contact <span className="accent">Me</span></h2>
+          <h2 className="section-title">Contact <span className="custom-accent">Me</span></h2>
           <div className="section-divider"></div>
         </div>
 
