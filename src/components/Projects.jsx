@@ -111,14 +111,7 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="project-links">
-                    <a href="#" className="project-link-btn demo">
-                      Live Demo
-                    </a>
-                    <a href="#" className="project-link-btn">
-                      GitHub
-                    </a>
-                  </div>
+
                 </div>
               </div>
             </div>

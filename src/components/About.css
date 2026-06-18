@@ -37,8 +37,18 @@
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
-  border-radius: var(--radius-lg);
+  border-radius: 10px;
+  border: 1px solid var(--border);
   overflow: hidden;
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center top; 
+  border-radius: 2px;
+  display: block;
 }
 
 

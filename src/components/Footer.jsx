@@ -22,13 +22,11 @@ export default function Footer() {
   return (
     <footer className="site-footer" role="contentinfo">
       <div className="container-xxl">
-        <div className="footer-inner">
+        <div className="footer-inner align-items-center">
           {/* Logo + tagline */}
           <div className="footer-brand">
             <a href="#hero" className="footer-logo" onClick={e => handleClick(e, '#hero')}>
-              <span className="logo-bracket">[</span>
-              <span>HK</span>
-              <span className="logo-bracket">]</span>
+              <img src="/images/logo.png" alt="Logo" className="footer-logo-img" />
             </a>
 
           </div>
@@ -45,9 +43,9 @@ export default function Footer() {
           {/* Social */}
           <div className="footer-social">
             {[
-              { icon: 'bi-github', href: 'https://github.com/huzaifakaleem', label: 'GitHub' },
-              { icon: 'bi-linkedin', href: 'https://linkedin.com/in/huzaifakaleem', label: 'LinkedIn' },
-              { icon: 'bi-twitter-x', href: 'https://twitter.com/huzaifakaleem', label: 'Twitter' },
+              { icon: 'bi-github', href: 'https://github.com/Huzaifakaleem', label: 'GitHub' },
+              { icon: 'bi-linkedin', href: 'https://www.linkedin.com/in/huzaifa-kaleem/', label: 'LinkedIn' },
+              { icon: 'bi-instagram', href: 'https://www.instagram.com/huzaifakaleem02?igsh=MWkwYjY3YzZvN2IxNQ==', label: 'Instagram' },
             ].map(({ icon, href, label }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
                 <i className={`bi ${icon}`} aria-hidden="true"></i>
@@ -56,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer-bottom">
+        <div className="footer-bottom align-items-center">
           <p className="mono">
 
             &nbsp;— &copy; {year} Huzaifa Kaleem. All rights reserved.

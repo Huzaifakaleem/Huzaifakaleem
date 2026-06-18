@@ -88,7 +88,9 @@
 }
 
 @keyframes pulse {
-  0%,100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
 
@@ -108,15 +110,13 @@
 }
 
 .hero-title span {
-  background: linear-gradient(
-    135deg,
-    var(--accent-cyan),
-    var(--accent-green)
-  );
+  background: linear-gradient(135deg,
+      var(--accent-cyan),
+      var(--accent-green));
 
   background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-desc {
@@ -130,26 +130,17 @@
   margin-bottom: 40px;
 }
 
-/* BUTTONS */
 
-.hero-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: nowrap;
-  margin-bottom: 50px;
-}
 
 .btn-primary {
   padding: 12px 20px;
-  font-size: 14px; 
+  font-size: 14px;
   border: none;
   border-radius: 5px;
   white-space: nowrap;
-  background: linear-gradient(
-    135deg,
-    var(--accent-cyan),
-    #00a8ff
-  );
+  background: linear-gradient(135deg,
+      var(--accent-cyan),
+      #00a8ff);
 
   color: #000;
 
@@ -167,7 +158,7 @@
 
 .btn-secondary {
   padding: 12px 20px;
-  font-size: 14px; 
+  font-size: 14px;
   border-radius: 5px;
 
   border: 1px solid var(--accent-cyan);
@@ -200,15 +191,13 @@
   font-size: 42px;
   font-weight: 800;
 
-  background: linear-gradient(
-    135deg,
-    var(--accent-cyan),
-    var(--accent-green)
-  );
+  background: linear-gradient(135deg,
+      var(--accent-cyan),
+      var(--accent-green));
 
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stat-box p {
@@ -282,11 +271,9 @@ background-clip: text;
 
   border: 2px solid var(--accent-cyan);
 
-  background: linear-gradient(
-    135deg,
-    #111827,
-    #18233d
-  );
+  background: linear-gradient(135deg,
+      #111827,
+      #18233d);
 
   display: flex;
   align-items: center;
@@ -305,7 +292,9 @@ background-clip: text;
 }
 
 @keyframes morph {
-  0%,100% {
+
+  0%,
+  100% {
     border-radius: 35% 65% 65% 35%;
   }
 
@@ -340,7 +329,7 @@ background-clip: text;
     margin-top: 40px;
   }
 
-   .stat-box h2 {
+  .stat-box h2 {
     font-size: 20px;
   }
 

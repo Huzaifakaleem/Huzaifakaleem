@@ -21,25 +21,32 @@
 
 /* Logo */
 .navbar-logo {
-  font-family: var(--font-mono);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-primary);
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0;
-  letter-spacing: 0.05em;
 }
-.logo-bracket { color: var(--accent-cyan); }
-.logo-initials { color: var(--text-primary); padding: 0 2px; }
-.logo-cursor {
-  color: var(--accent-green);
-  opacity: 0;
-  transition: opacity 0.1s;
-  font-weight: 300;
+
+.navbar-logo-img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.logo-cursor.visible { opacity: 1; }
+
+.navbar-logo:hover .navbar-logo-img {
+  opacity: 0.85;
+  transform: scale(1.04);
+}
+
+/* Shrink logo slightly when navbar is scrolled */
+.navbar-cyber.scrolled .navbar-logo-img {
+  height: 55px;
+}
+
+/* Drawer header logo */
+.drawer-header .navbar-logo-img {
+  height: 36px;
+}
 
 /* Desktop nav links */
 .navbar-links {
@@ -147,13 +154,9 @@
 .mobile-drawer.open { transform: translateX(0); }
 
 .drawer-header {
-  font-family: var(--font-mono);
-  font-size: 1.4rem;
-  font-weight: 700;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
-  gap: 0;
 }
 .mobile-drawer ul {
   list-style: none;

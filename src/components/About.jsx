@@ -13,7 +13,7 @@ const skills = [
 const experience = [
   {
     role: 'Senior MERN Developer',
-    company: 'TechNova Solutions',
+    company: 'TechSolutions',
     period: '2023 – Present',
     points: [
       'Architected microservices serving 500k+ users with 99.9% uptime',
@@ -23,7 +23,7 @@ const experience = [
   },
   {
     role: 'Full Stack Engineer',
-    company: 'Devbridge Labs',
+    company: 'DevLabs',
     period: '2022 – 2023',
     points: [
       'Built real-time features with Socket.io and WebSocket protocols',
@@ -35,14 +35,14 @@ const experience = [
 
 const education = [
   {
-    degree: 'B.Sc. Computer Science',
-    school: 'FAST-NUCES, Lahore',
-    period: '2018 – 2022',
-    grade: 'CGPA: 3.7 / 4.0',
+    degree: 'B.Sc. Information Technology',
+    school: 'Government College of Science, Lahore',
+    period: '2021-2025',
+    grade: 'CGPA: 3.5 / 4.0',
   },
   {
     degree: 'Full Stack Web Dev Bootcamp',
-    school: 'The Odin Project + Udemy',
+    school: 'Brains College, Lahore',
     period: '2022',
     grade: 'Top 5% Completion',
   },
@@ -78,9 +78,11 @@ export default function About() {
           <div className="col-lg-4 animate-on-scroll delay-1">
             <div className="about-photo-wrap">
               <div className="photo-frame">
-                <div className="photo-placeholder">
-                  <i className="bi bi-person-fill"></i>
-                </div>
+              <img
+                  src="../images/Me.JPG"  
+                  alt="Huzaifa Kaleem"
+                  className="profile-photo"
+/>
                 <div className="photo-border-glow" aria-hidden="true"></div>
                 <div className="photo-scanlines" aria-hidden="true"></div>
               </div>
@@ -107,7 +109,7 @@ export default function About() {
                   className="mono"
                   style={{
                     fontSize: "13px",
-                    color: "var(--accent-green)",
+                    color: "var(--accent-cyan)",
                     marginTop: "8px",
                     lineHeight: "1.8",
                   }}

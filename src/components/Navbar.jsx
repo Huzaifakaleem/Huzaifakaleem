@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const navLinks = [
@@ -15,7 +15,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [blink, setBlink] = useState(true);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -23,26 +22,31 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Cursor blink
+  // Active section tracking — uses live getBoundingClientRect so it works after dynamic layout shifts
   useEffect(() => {
-    const id = setInterval(() => setBlink(b => !b), 530);
-    return () => clearInterval(id);
-  }, []);
+    const sectionIds = navLinks.map(l => l.href.slice(1));
+    // Trigger: section top crosses above 30% of the viewport height
+    const TRIGGER = 0.30;
 
-  // Active section tracking
-  useEffect(() => {
-    const sections = navLinks.map(l => l.href.slice(1));
-    const observers = sections.map(id => {
-      const el = document.getElementById(id);
-      if (!el) return null;
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
-        { threshold: 0.35 }
-      );
-      obs.observe(el);
-      return obs;
-    });
-    return () => observers.forEach(o => o && o.disconnect());
+    const onScroll = () => {
+      const threshold = window.innerHeight * TRIGGER;
+      let current = sectionIds[0];
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        // Once the top of the section is above the trigger line, it becomes active
+        if (rect.top <= threshold) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run once on mount
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const handleLinkClick = (e, href) => {
@@ -66,14 +70,11 @@ export default function Navbar() {
             onClick={e => handleLinkClick(e, '#hero')}
             aria-label="Home"
           >
-            <span className="logo-bracket">[</span>
-            <span className="logo-initials">HK</span>
-            <span className={`logo-cursor ${blink ? 'visible' : ''}`}>_</span>
-            <span className="logo-bracket">]</span>
+            <img src="/images/logo.png" alt="Logo" className="navbar-logo-img" />
           </a>
 
           {/* Desktop Links */}
-          <ul className="navbar-links d-none d-lg-flex" role="list">
+          <ul className="navbar-links d-none d-lg-flex" >
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <a
@@ -81,7 +82,7 @@ export default function Navbar() {
                   className={`nav-link-cyber ${activeSection === href.slice(1) ? 'active' : ''}`}
                   onClick={e => handleLinkClick(e, href)}
                 >
-                  <span className="nav-num">{navLinks.indexOf({ href, label }) < 9 ? `0${navLinks.findIndex(l=>l.href===href)+1}` : navLinks.findIndex(l=>l.href===href)+1}.</span>
+                  <span className="nav-num">{String(navLinks.findIndex(l => l.href === href) + 1).padStart(2, '0')}.</span>
                   {label}
                 </a>
               </li>
@@ -112,12 +113,9 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <div className={`mobile-drawer ${drawerOpen ? 'open' : ''}`} aria-hidden={!drawerOpen}>
         <div className="drawer-header">
-          <span className="logo-bracket">[</span>
-          <span className="logo-initials">HK</span>
-          <span className="logo-cursor visible">_</span>
-          <span className="logo-bracket">]</span>
+          <img src="/images/logo.png" alt="Logo" className="navbar-logo-img" />
         </div>
-        <ul role="list">
+        <ul>
           {navLinks.map(({ href, label }, i) => (
             <li key={href} style={{ animationDelay: `${i * 0.06}s` }}>
               <a

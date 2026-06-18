@@ -57,9 +57,8 @@ const Hero = () => {
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
 
-            ctx.strokeStyle = `rgba(0, 212, 255, ${
-              0.12 - distance / 1400
-            })`;
+            ctx.strokeStyle = `rgba(0, 212, 255, ${0.12 - distance / 1400
+              })`;
 
             ctx.lineWidth = 1;
             ctx.stroke();
@@ -91,7 +90,7 @@ const Hero = () => {
           </div>
 
           <h1 className="hero-title">
-           Huzaifa <br />
+            Huzaifa <br />
             <span>Kaleem</span>
           </h1>
 
@@ -101,15 +100,7 @@ const Hero = () => {
             and ship products that users love.
           </p>
 
-          <div className="hero-buttons">
-            <button className="btn-primary">
-              View My Work
-            </button>
-
-            <button className="btn-secondary">
-              Download CV
-            </button>
-          </div>
+       
 
           <div className="hero-stats">
             <div className="stat-box">
