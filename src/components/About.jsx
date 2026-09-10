@@ -10,40 +10,18 @@ const skills = [
   { name: 'Git', level: 90, color: 'cyan' },
 ];
 
-const experience = [
-  {
-    role: 'Senior MERN Developer',
-    company: 'TechSolutions',
-    period: '2023 – Present',
-    points: [
-      'Architected microservices serving 500k+ users with 99.9% uptime',
-      'Reduced API response times by 60% via Redis caching & query optimization',
-      'Led a team of 5 engineers using Agile/Scrum methodology',
-    ],
-  },
-  {
-    role: 'Full Stack Engineer',
-    company: 'DevLabs',
-    period: '2022 – 2023',
-    points: [
-      'Built real-time features with Socket.io and WebSocket protocols',
-      'Integrated Stripe & PayPal payment gateways for SaaS platform',
-      'Deployed containerized apps on AWS ECS with CI/CD pipelines',
-    ],
-  },
-];
 
 const education = [
   {
     degree: 'B.Sc. Information Technology',
-    school: 'Government College of Science, Lahore',
-    period: '2021-2025',
-    grade: 'CGPA: 3.5 / 4.0',
+    school: 'Virtual University of Pakistan',
+    period: '2023 - 2027',
+    grade: 'CGPA: 3.1 / 4.0',
   },
   {
     degree: 'Full Stack Web Dev Bootcamp',
     school: 'Brains College, Lahore',
-    period: '2022',
+    period: '2025',
     grade: 'Top 5% Completion',
   },
 ];
@@ -79,7 +57,7 @@ export default function About() {
             <div className="about-photo-wrap">
               <div className="photo-frame">
               <img
-                  src="../images/Me.JPG"  
+                  src="/images/Me.JPG"  
                   alt="Huzaifa Kaleem"
                   className="profile-photo"
 />
@@ -117,7 +95,7 @@ export default function About() {
                   &gt; Huzaifa Kaleem <br />
                   &gt; Lahore, Pakistan 🇵🇰 <br />
                   &gt; MERN Stack Developer <br />
-                  &gt; 3 years experience
+                  &gt; 5+ years experience
                 </div>
               </div>
             </div>
@@ -132,7 +110,7 @@ export default function About() {
                 <span className="accent-cyan">{' />'}</span>
               </h3>
               <p className="about-text">
-                I'm a passionate MERN stack developer with 3+ years of experience crafting
+                I'm a passionate MERN stack developer with experience in crafting
                 scalable web applications. I specialize in building robust backends with
                 Node.js & MongoDB, and polished frontends with React.
               </p>
@@ -144,7 +122,7 @@ export default function About() {
 
               {/* Tabs */}
               <div className="about-tabs" role="tablist" aria-label="About sections">
-                {['skills', 'experience', 'education'].map(tab => (
+                {['skills', 'education'].map(tab => (
                   <button
                     key={tab}
                     role="tab"
@@ -178,29 +156,7 @@ export default function About() {
                   </div>
                 )}
 
-                {activeTab === 'experience' && (
-                  <div className="exp-list">
-                    {experience.map(({ role, company, period, points }) => (
-                      <div key={role} className="exp-card">
-                        <div className="exp-header">
-                          <div>
-                            <h4 className="exp-role">{role}</h4>
-                            <span className="exp-company">{company}</span>
-                          </div>
-                          <span className="exp-period mono">{period}</span>
-                        </div>
-                        <ul className="exp-points">
-                          {points.map(p => (
-                            <li key={p}>
-                              <i className="bi bi-chevron-right accent-cyan" aria-hidden="true"></i>
-                              {p}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                )}
+           
 
                 {activeTab === 'education' && (
                   <div className="edu-list">

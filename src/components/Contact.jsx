@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 const socials = [
   { icon: 'bi-github',        label: 'GitHub',   href: 'https://github.com/Huzaifakaleem',      color: 'cyan' },

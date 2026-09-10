@@ -4,13 +4,13 @@ import "./Experience.css";
 const Experience = () => {
   const experienceData = [
     {
-      date: "2022 – PRESENT",
-      role: "Senior Full-Stack Developer",
-      company: "TechCorp Solutions, Lahore",
+      date: "2022 – 2023",
+      role: "Senior MERN Developer",
+      company: "TechSolutions , Lahore",
       points: [
-        "Architected microservices reducing API latency by 40%",
-        "Led a team of 4 devs shipping 3 enterprise SaaS products",
-        "Implemented CI/CD pipelines cutting deployment time by 60%",
+      'Architected microservices serving 500k+ users with 99.9% uptime',
+      'Reduced API response times by 60% via Redis caching & query optimization',
+      'Led a team of 5 engineers using Agile/Scrum methodology',
       ],
     },
     {
@@ -22,27 +22,7 @@ const Experience = () => {
         "Built real-time features with Socket.IO and WebRTC",
         "Integrated payment gateways: Stripe, PayFast, JazzCash",
       ],
-    },
-    {
-      date: "2020 – 2021",
-      role: "Backend Developer",
-      company: "CloudNest, Lahore",
-      points: [
-        "Designed RESTful APIs consumed by 3 mobile apps",
-        "Optimized MongoDB queries, improving response time by 55%",
-        "Implemented JWT + refresh-token authentication system",
-      ],
-    },
-    {
-      date: "2019 – 2020",
-      role: "Junior Web Developer",
-      company: "StartupHive, Lahore",
-      points: [
-        "Contributed to React dashboard used by 10,000+ users",
-        "Wrote unit and integration tests (Jest, Mocha)",
-        "Maintained MongoDB schemas and wrote migration scripts",
-      ],
-    },
+    }
   ];
 
   useEffect(() => {

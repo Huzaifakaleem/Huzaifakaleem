@@ -27,7 +27,7 @@
 }
 
 .navbar-logo-img {
-  height: 55px;
+  height: 72px;
   width: auto;
   object-fit: contain;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -40,7 +40,7 @@
 
 /* Shrink logo slightly when navbar is scrolled */
 .navbar-cyber.scrolled .navbar-logo-img {
-  height: 55px;
+  height: 62px;
 }
 
 /* Drawer header logo */

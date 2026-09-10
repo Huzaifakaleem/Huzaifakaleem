@@ -6,53 +6,13 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "NexChat — Real-Time Chat App",
-      desc: "Full-stack messaging platform with rooms, presence, and encryption.",
-      icon: "💬",
+      title: "Dr Shiza Naeem | Plastic, Reconstructive & Aesthetic Surgeon",
+      desc: "Developed a responsive and modern portfolio website for a plastic surgeon using the MERN stack. The platform showcases the surgeon’s services,  patient reviews, and contact functionality.",
+      icon: "/images/Drshizanaeem.jpg",
       category: "fullstack",
       featured: true,
-      tech: ["React", "Socket.IO", "MongoDB", "Node.js"],
-    },
-    {
-      title: "DataViz — Dashboard",
-      desc: "Interactive analytics dashboard with charts and dark mode.",
-      icon: "📊",
-      category: "frontend",
-      featured: false,
-      tech: ["React", "TypeScript", "Charts"],
-    },
-    {
-      title: "TaskFlow API",
-      desc: "REST API with JWT auth, RBAC, rate limiting, and docs.",
-      icon: "⚙️",
-      category: "backend",
-      featured: false,
-      tech: ["Node.js", "Express", "MongoDB"],
-    },
-    {
-      title: "CloudSync — File Storage Platform",
-      desc: "Secure cloud storage platform with drag & drop uploads, sharing, and folder management.",
-      icon: "☁️",
-      category: "fullstack",
-      featured: true,
-      tech: ["React", "Node.js", "MongoDB", "AWS"],
-    },
-    {
-      title: "CodeSphere — Developer Social App",
-      desc: "Social platform for developers with posts, comments, likes, and GitHub integration.",
-      icon: "👨‍💻",
-      category: "frontend",
-      featured: false,
-      tech: ["React", "Firebase", "Tailwind", "GitHub API"],
-    },
-    {
-      title: "AI Resume Analyzer",
-      desc: "AI-powered resume screening system with keyword matching and ATS score generation.",
-      icon: "🤖",
-      category: "backend",
-      featured: false,
-      tech: ["Node.js", "Express", "OpenAI API", "MongoDB"],
-    },
+      tech: ["React.js", "Express.js", "MongoDB", "Node.js"],
+    }
   ];
 
   const filteredProjects =
@@ -89,13 +49,10 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <div className="col-lg-4 col-md-6" key={index}>
               <div className="project-card">
-                {project.featured && (
-                  <div className="featured-ribbon">FEATURED</div>
-                )}
 
                 <div className="project-card-img">
                   <span className="project-card-img-icon">
-                    {project.icon}
+                    <img src={project.icon} alt={project.title} />
                   </span>
                 </div>
 

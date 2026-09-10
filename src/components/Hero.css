@@ -88,7 +88,6 @@
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -110,9 +109,7 @@
 }
 
 .hero-title span {
-  background: linear-gradient(135deg,
-      var(--accent-cyan),
-      var(--accent-green));
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -128,9 +125,10 @@
   max-width: 600px;
 
   margin-bottom: 40px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
-
-
 
 .btn-primary {
   padding: 12px 20px;
@@ -138,9 +136,7 @@
   border: none;
   border-radius: 5px;
   white-space: nowrap;
-  background: linear-gradient(135deg,
-      var(--accent-cyan),
-      #00a8ff);
+  background: linear-gradient(135deg, var(--accent-cyan), #00a8ff);
 
   color: #000;
 
@@ -191,9 +187,7 @@
   font-size: 42px;
   font-weight: 800;
 
-  background: linear-gradient(135deg,
-      var(--accent-cyan),
-      var(--accent-green));
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -271,9 +265,7 @@
 
   border: 2px solid var(--accent-cyan);
 
-  background: linear-gradient(135deg,
-      #111827,
-      #18233d);
+  background: linear-gradient(135deg, #111827, #18233d);
 
   display: flex;
   align-items: center;
@@ -292,7 +284,6 @@
 }
 
 @keyframes morph {
-
   0%,
   100% {
     border-radius: 35% 65% 65% 35%;

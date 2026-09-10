@@ -11,8 +11,8 @@ exports.adminAuth = (req, res, next) => {
   const key = req.headers['x-admin-key'];
 
   if (!process.env.ADMIN_API_KEY) {
-    console.warn('⚠️  ADMIN_API_KEY is not set — admin routes are unprotected!');
-    return next();
+    console.error('❌ ADMIN_API_KEY is not set — denying all admin access.');
+    return res.status(401).json({ success: false, message: 'Unauthorized.' });
   }
 
   if (!key || key !== process.env.ADMIN_API_KEY) {

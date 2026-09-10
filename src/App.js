@@ -69,7 +69,7 @@ function useScrollAnimations() {
     );
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  });
+  }, []);
 }
 
 /* ─── Back to Top Hook ─── */

@@ -27,6 +27,7 @@ const Hero = () => {
       });
     }
 
+    let animId;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -66,13 +67,14 @@ const Hero = () => {
         }
       });
 
-      requestAnimationFrame(animate);
+      animId = requestAnimationFrame(animate);
     };
 
     animate();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      cancelAnimationFrame(animId);
     };
   }, []);
 
@@ -82,7 +84,7 @@ const Hero = () => {
       <canvas id="particles"></canvas>
 
       {/* Content */}
-      <div className="hero-container">
+      <div className="hero-container mt-4">
         <div className="hero-left">
           <div className="hero-badge">
             <span className="badge-dot"></span>
@@ -104,17 +106,17 @@ const Hero = () => {
 
           <div className="hero-stats">
             <div className="stat-box">
-              <h2>5+</h2>
+              <h2>3+</h2>
               <p>Years Exp.</p>
             </div>
 
             <div className="stat-box">
-              <h2>42</h2>
+              <h2>13</h2>
               <p>Projects</p>
             </div>
 
             <div className="stat-box">
-              <h2>18</h2>
+              <h2>13</h2>
               <p>Clients</p>
             </div>
 

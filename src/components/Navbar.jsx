@@ -123,7 +123,7 @@ export default function Navbar() {
                 className={activeSection === href.slice(1) ? 'active' : ''}
                 onClick={e => handleLinkClick(e, href)}
               >
-                <span className="nav-num">0{i + 1}.</span> {label}
+                <span className="nav-num">{String(i + 1).padStart(2, '0')}.</span> {label}
               </a>
             </li>
           ))}

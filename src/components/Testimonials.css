@@ -10,19 +10,23 @@
   overflow: hidden;
   position: relative;
 }
+
 .testimonials-carousel::before,
 .testimonials-carousel::after {
   content: '';
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   width: 150px;
   z-index: 2;
   pointer-events: none;
 }
+
 .testimonials-carousel::before {
   left: 0;
   background: linear-gradient(90deg, var(--bg-secondary), transparent);
 }
+
 .testimonials-carousel::after {
   right: 0;
   background: linear-gradient(-90deg, var(--bg-secondary), transparent);
@@ -35,12 +39,19 @@
   animation: carouselScroll 40s linear infinite;
   width: max-content;
 }
+
 .testimonials-carousel:hover .carousel-track {
   animation-play-state: paused;
 }
+
 @keyframes carouselScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* Card */
@@ -58,6 +69,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .testimonial-card::before {
   content: '"';
   position: absolute;
@@ -65,10 +77,11 @@
   right: 20px;
   font-size: 8rem;
   font-family: var(--font-heading);
-  color: rgba(0,212,255,0.05);
+  color: rgba(0, 212, 255, 0.05);
   line-height: 1;
   pointer-events: none;
 }
+
 .testimonial-card:hover {
   border-color: var(--border-hover);
   box-shadow: var(--glow);
@@ -91,6 +104,9 @@
   border: none;
   padding: 0;
   margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .testimonial-author {
@@ -100,8 +116,10 @@
   border-top: 1px solid var(--border);
   padding-top: 1rem;
 }
+
 .testimonial-avatar {
-  width: 44px; height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -111,22 +129,26 @@
   font-weight: 700;
   flex-shrink: 0;
 }
+
 .testimonial-avatar.cyan {
-  background: rgba(0,212,255,0.15);
+  background: rgba(0, 212, 255, 0.15);
   color: var(--accent-cyan);
-  border: 1px solid rgba(0,212,255,0.3);
+  border: 1px solid rgba(0, 212, 255, 0.3);
 }
+
 .testimonial-avatar.green {
-  background: rgba(0,255,136,0.15);
+  background: rgba(0, 255, 136, 0.15);
   color: var(--accent-green);
-  border: 1px solid rgba(0,255,136,0.3);
+  border: 1px solid rgba(0, 255, 136, 0.3);
 }
+
 .author-name {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-primary);
   margin: 0;
 }
+
 .author-role {
   font-size: 0.75rem;
   color: var(--text-muted);
