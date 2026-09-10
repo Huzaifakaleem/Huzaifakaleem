@@ -156,7 +156,7 @@ function ContactForm() {
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate aria-label="Contact form">
+    <form className="contact-form" onSubmit={handleSubmit} noValidate aria-label="Contact form" netlify>
 
       <div className="form-row">
         {/* Name */}
