@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const socials = [
   { icon: 'bi-github',        label: 'GitHub',   href: 'https://github.com/Huzaifakaleem',      color: 'cyan' },
@@ -123,13 +123,20 @@ function ContactForm() {
     setServerError('');
 
     try {
-      const res = await fetch(`${API_URL}/api/contact`, {
+      const isNetlifyForm = !API_URL;
+      const res = await fetch(isNetlifyForm ? '/' : `${API_URL}/api/contact`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': isNetlifyForm
+            ? 'application/x-www-form-urlencoded'
+            : 'application/json',
+        },
+        body: isNetlifyForm
+          ? new URLSearchParams({ 'form-name': 'contact', ...form }).toString()
+          : JSON.stringify(form),
       });
 
-      const data = await res.json();
+      const data = isNetlifyForm ? {} : await res.json();
 
       if (!res.ok) {
         // Server returned field-level validation errors → show inline
@@ -156,7 +163,8 @@ function ContactForm() {
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate aria-label="Contact form" netlify>
+    <form className="contact-form" name="contact" onSubmit={handleSubmit} noValidate aria-label="Contact form" netlify>
+      <input type="hidden" name="form-name" value="contact" />
 
       <div className="form-row">
         {/* Name */}
